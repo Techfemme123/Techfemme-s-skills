@@ -1,0 +1,13 @@
+{
+  "eval_name": "pcao-f-certification-campaign",
+  "prompt": "We're opening proctored PCAO-F seats in about 6 weeks. Plan a content campaign across YouTube, LinkedIn and Instagram to get both Panaversity students and external candidates to sit PCAO-F. Team is one video editor and two writers (one of them writes Urdu). Save the plan as campaign-plan.md.",
+  "assertions": [
+    "The plan states that PCAO-F comes before PCAR-F and that passing both qualifies a candidate for the Panaversity FDE Internship Program.",
+    "The plan makes clear that the PCAO-F/PCAR-F gate is Panaversity's requirement and that the Anthropic exams are optional or not prerequisites.",
+    "The plan does not state a specific amount for the Panaversity proctoring fee or third-attempt fee (it says they are unannounced, marks them to verify, or omits them).",
+    "The plan does not promise or guarantee jobs, salaries, income, or an internship place to people who sit the exam.",
+    "The plan uses the free sample exam as a call to action in at least one content piece.",
+    "Every content piece listed in the plan is tagged with a language (English, Urdu, or Roman Urdu).",
+    "At least five content pieces in the plan point to a specific agentfactory.panaversity.org/docs page URL."
+  ]
+}

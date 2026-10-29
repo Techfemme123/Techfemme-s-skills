@@ -1,0 +1,23 @@
+{
+  "expectations": [
+    {"text": "The plan states that PCAO-F comes before PCAR-F and that passing both qualifies a candidate for the Panaversity FDE Internship Program.", "passed": true, "evidence": "Section 2 facts: 'Path: **PCAO-F → PCAR-F → FDE Internship Program**'. Guardrail: 'Do not say PCAO-F alone qualifies someone for the internship. **Both PCAO-F and PCAR-F** are needed.'"},
+    {"text": "The plan makes clear that the PCAO-F/PCAR-F gate is Panaversity's requirement and that the Anthropic exams are optional or not prerequisites.", "passed": false, "evidence": "The first half is present: 'PCAO-F is Panaversity's readiness gate' and 'Do not imply Anthropic requires or endorses PCAO-F.' But the plan never says the Anthropic exams (CCAO-F/CCAR-F) are optional or not prerequisites for the gate or the internship. It calls CCAO-F 'the credential employers verify with Anthropic', W5-LI-1 says 'CCAO-F is the one worth carrying', and it offers Anthropic registration help 'for internship participants'. Whether the Anthropic exams are optional is never stated."},
+    {"text": "The plan does not state a specific amount for the Panaversity proctoring fee or third-attempt fee (it says they are unannounced, marks them to verify, or omits them).", "passed": true, "evidence": "Assumption 2: 'the external proctoring fee and the fee for a third or later attempt are \"not announced yet.\" Content must not give a price'. Guardrail: 'Do not quote fees for externals or for a third attempt.' The only $99 figure is Anthropic's CCAO-F."},
+    {"text": "The plan does not promise or guarantee jobs, salaries, income, or an internship place to people who sit the exam.", "passed": true, "evidence": "Guardrail: 'Do not promise jobs or salaries. The book itself says the credentials are new and have \"no mature salary data.\"' No content piece promises a job, income or an internship place."},
+    {"text": "The plan uses the free sample exam as a call to action in at least one content piece.", "passed": true, "evidence": "W3-YT-UR 'Ends with: try the free sample'; W3-IG-R 'Free sample exam: attempt kharch nahin hota'; W4 'Sample Exam Challenge ... Take the free sample this week'."},
+    {"text": "Every content piece listed in the plan is tagged with a language (English, Urdu, or Roman Urdu).", "passed": true, "evidence": "Every row of the Week 1–7 calendar tables has a Lang value (EN, Urdu, Roman Urdu, EN/UR, Urdu/EN, Bilingual, 'EN or UR (whichever did better)'). Week 0 items are setup and internal work (templates, glossary, scripts), not published pieces."},
+    {"text": "At least five content pieces in the plan point to a specific agentfactory.panaversity.org/docs page URL.", "passed": false, "evidence": "No calendar row cites a URL. The only URLs are in the Section 2 header ('Sources: ... https://agentfactory.panaversity.org/docs/certifications/pcao-f') and in Section 10 Sources. A blanket rule ('Every link goes to the PCAO-F page with UTM parameters') and vague references such as W3-LI-1 '(links to study guide pages)' don't tie specific pieces to specific docs URLs."}
+  ],
+  "summary": {"passed": 5, "failed": 2, "total": 7, "pass_rate": 0.71},
+  "timing": {"executor_duration_seconds": 139.1, "total_duration_seconds": 139.1},
+  "claims": [
+    {"claim": "Retrieved through the Agent Factory System of Record (corpus generation 82)", "type": "process", "verified": false, "evidence": "No transcript available to verify."},
+    {"claim": "Evaluation (21%) + Workflow (16%) + Governance (15%) = 52%", "type": "factual", "verified": true, "evidence": "Arithmetic is correct."}
+  ],
+  "eval_feedback": {
+    "suggestions": [
+      {"assertion": "At least five content pieces in the plan point to a specific agentfactory.panaversity.org/docs page URL.", "reason": "Borderline: the blanket 'every link goes to the PCAO-F page' rule could be read as satisfying this. Make it explicit that the URL must be attached to each piece."}
+    ],
+    "overall": "A1, A3, A4 and A5 pass in both runs and do little to discriminate."
+  }
+}

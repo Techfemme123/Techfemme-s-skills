@@ -18,7 +18,7 @@ The two vendored installs are tracked in `skills-lock.json`. The repo is pushed 
 - `.agents/skills/<name>/SKILL.md`: each skill. YAML frontmatter (`name`, `description`, and sometimes `metadata.version`) followed by the instructions. The `description` field decides when the skill triggers, so keep its trigger phrases intact when editing.
 - `.agents/skills/<name>/references/`: longer material that `SKILL.md` links to and loads on demand. Keep detail here and leave `SKILL.md` as the main spine.
 - `.claude/skills/<name>`: Windows directory junctions to `.agents/skills/<name>`, so Claude Code loads the skills. Edit the files under `.agents/`. The junctions pick up changes on their own. They are gitignored, so after a fresh clone, recreate each one in PowerShell from the repo root: `New-Item -ItemType Junction -Path .claude\skills\<name> -Target .agents\skills\<name>`.
-- `.agents/skills/*-workspace/`: test-run output from skill-creator (generated outputs, `grading.json`, `benchmark.json`, `review.html`, `feedback.json`). Gitignored and kept local.
+- `.agents/skills/*-workspace/`: test-run output from skill-creator (generated outputs, `grading.json`, `benchmark.json`, `review.html`, `feedback.json`), organized as `iteration-N/<case-name>/<with_skill|without_skill>/`. `agent-factory-content-strategy-workspace/` is committed so its test results are on GitHub. Other workspaces, such as `content-strategy-workspace/`, are gitignored and kept local.
 
 ## The agent-factory-content-strategy skill
 

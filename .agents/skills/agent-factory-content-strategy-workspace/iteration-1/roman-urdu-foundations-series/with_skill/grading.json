@@ -1,0 +1,74 @@
+{
+  "expectations": [
+    {
+      "text": "The series plan contains exactly 12 posts (3 per week for 4 weeks).",
+      "passed": true,
+      "evidence": "Header: '3 posts/week · 4 weeks (12 posts)'. Section 4 has Post 1 to Post 12, three under each of Week 1-4 (Mon/Wed/Fri, 2 Nov to 27 Nov)."
+    },
+    {
+      "text": "Every one of the posts has a hook, a topic, and a CTA.",
+      "passed": true,
+      "evidence": "All 12 post blocks have Hook, Topic and CTA lines, e.g. Post 1 Hook 'Har koi kehta hai \"AI seekho\". Lekin kahan se shuru karein? Ye raha jawab.', Topic 'The Foundations path...', CTA 'Follow karein. Agla video Wednesday ko: course #1.'; Post 12 Hook '4 hafte, 10 courses, 1 line har course ki. Kitne yaad hain?', CTA 'Comment mein apna sab se bara AI sawal likhein...'."
+    },
+    {
+      "text": "The hooks are written in Roman Urdu (Urdu in Latin script), not in Urdu script and not in plain English.",
+      "passed": true,
+      "evidence": "All 12 hooks are Roman Urdu, e.g. Post 2 'Aap AI se sirf sawal poochte hain? Isi liye kaam ab bhi aap hi kar rahe hain.', Post 9 'Har baar AI ko wohi baat dobara samjhate hain? Ek baar sikhaein, bas.' No Urdu script, no all-English hook. (The topic/beats text around them is English, but this assertion covers only hooks.)"
+    },
+    {
+      "text": "Book and technical terms such as prompt, AI agent, Digital FTE, Claude or Zia Tutor are kept in English rather than translated into Urdu words.",
+      "passed": true,
+      "evidence": "Language rule: 'Book terms stay in English: prompt, token, context window, Skill, connector, Digital FTE, Markdown, HTML, workflow.' Hooks/CTAs keep them: 'Asal cheez prompt nahi, context hai', 'Aaj ka prompt Markdown mein likh kar dekhein', 'Zia Tutor AI'. No translated forms found."
+    },
+    {
+      "text": "Each post is mapped to a named crash course from the book's Foundations section (e.g. Just Delegate It, What AI Actually Is, AI Fluency, AI Prompting in 2026, Markdown In HTML Out, Code You Never Write, Skills & Connectors, How to Think in the AI Era, Workflow Design & Diagnosis, Governance Risk & Responsible Use), and no post cites a course that does not exist in the book.",
+      "passed": false,
+      "evidence": "Posts 2-11 map to valid courses (post 11 to both Workflow Design and Governance), and no nonexistent course is cited. But Post 1 is mapped to the 'Foundations hub' (table row '| 1 | Mon 2 Nov | Foundations hub |', 'Post 1: Series trailer') and Post 12 to 'Hub + Zia Tutor' (a recap pointing to General Agents), not to a named crash course. Under the strict 'each post' rule, this fails."
+    },
+    {
+      "text": "At least eight posts include a specific agentfactory.panaversity.org page URL.",
+      "passed": true,
+      "evidence": "All 12 posts have a full URL in their Source line, e.g. Post 2 'https://agentfactory.panaversity.org/docs/just-delegate-it-crash-course', Post 6 'https://agentfactory.panaversity.org/docs/ai-prompting-2026', Post 11 governance + workflow URLs, Post 12 foundations / ecosystem/zia-tutor-ai / general-agents. 12/12 >= 8."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 1,
+    "total": 6,
+    "pass_rate": 0.83
+  },
+  "timing": {
+    "executor_duration_seconds": 200.5,
+    "total_duration_seconds": 200.5
+  },
+  "claims": [
+    {
+      "claim": "Course names and order confirmed via outline_agent_factory",
+      "type": "process",
+      "verified": false,
+      "evidence": "No transcript available. The names and order match the grader-supplied valid list."
+    },
+    {
+      "claim": "'Free' and Zia Tutor price/Urdu support are flagged [verify] rather than asserted",
+      "type": "quality",
+      "verified": true,
+      "evidence": "The fact-check table flags both. The IG CTA template and the Post 2 CTA still use 'free' wording; the plan says to keep it only after the check."
+    }
+  ],
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "assertion": "Each post is mapped to a named crash course...",
+        "reason": "The 'e.g.' list plus 'each post' is ambiguous about trailer/recap posts. This run fails only because posts 1 and 12 are a hub trailer and a recap, a reasonable design choice. It also merges two courses into post 11. Decide whether a trailer/recap is allowed, or assert instead that all 10 courses are covered and no fake course is cited."
+      },
+      {
+        "assertion": "Assertions 1-4",
+        "reason": "Both runs pass these, so they don't discriminate between with and without the skill."
+      },
+      {
+        "reason": "No assertion checks unverified claims (cost, 'free', certification perks). This run flags them for checking, and that difference goes unrewarded."
+      }
+    ],
+    "overall": "Only the URL and course-mapping assertions discriminate, and the course-mapping one is ambiguously worded."
+  }
+}

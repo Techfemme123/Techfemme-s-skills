@@ -1,0 +1,44 @@
+{
+  "expectations": [
+    {
+      "text": "The plan covers a full quarter (about 12-13 weeks) with a stated posting cadence.",
+      "passed": true,
+      "evidence": "Header: 'Quarter: 13 weeks, Mon 9 Nov 2026 to Fri 5 Feb 2027'. Section 5: 'Company page: 4 posts a week, plus 1 newsletter every two weeks', with a Mon/Tue/Thu/Fri slot table. Section 7 has a 13-week calendar plus Week 0 setup."
+    },
+    {
+      "text": "The plan ties content pieces to at least four of these book pages by name or URL: Preface, AI Is Non-Negotiable, Thesis, The Operating Layer, What You Carry In.",
+      "passed": true,
+      "evidence": "Four pages, with URLs, are tied to pieces: Preface (Week 1 manifesto, 'agentfactory.panaversity.org/docs/preface-agent-native'), Thesis (Claim #12, Week 3), The Operating Layer (Week 4 'Operating Layer launch post'; Claims #02, #04-#07, #10), What You Carry In (Week 10 'What You Carry In launch', Claim #08). AI Is Non-Negotiable is not mentioned anywhere."
+    },
+    {
+      "text": "The plan includes a fact-check list or explicit verify flags for claims and figures before publishing.",
+      "passed": true,
+      "evidence": "Week 0: 'Fact-check sheet: every number to be used, its source URL, and the date it was checked.' Inline flags on figures: Week 7 'OSWorld point from §8 (recheck the current figure before posting)'; Week 11 '$3.5B behind one job title (recheck sources)'. Guardrail 1: 'Recheck before each post.' Weaker than a populated list (the sheet is a Week 0 task, not delivered), but explicit verify flags on figures are present."
+    },
+    {
+      "text": "Any Anthropic valuation, revenue or IPO figure in the plan is labelled with its source or date and, where applicable, as reported rather than announced; or the plan uses no such figures.",
+      "passed": true,
+      "evidence": "No Anthropic dollar valuation, revenue or IPO figure appears in the plan. Anthropic appears only in 'Chart: Anthropic vs. India's six largest IT firms (Preface). Frame with care; see §10' (Week 11), 'The Anthropic vs. India IT comparison' and '1.9 million jobs' (Guardrail 3), and as a named vendor. Guardrail 1 also says that for 'valuations, run-rates' the team must say they are reported and 'Never round up or remove \"reported\" or \"projected.\"' This passes via the no-figures clause. Note that the Week 11 chart will need a valuation, and the plan does not say which basis (the $800B reported bid or a later figure) to use."
+    },
+    {
+      "text": "The distribution plan routes LinkedIn attention back to an owned surface such as the book site, Zia Tutor, a newsletter, or the community.",
+      "passed": true,
+      "evidence": "Section 5 rules: 'Link to the exact book page, not the homepage, in the first comment or at the end, with UTM tags.' Metrics table: 'Click-throughs to the book | UTM-tagged links (utm_source=linkedin&utm_campaign=right-side-q4)'. Section 9: 'Newsletter. Each issue ends with \"Argue with this issue\" and links to the exact book section.'"
+    }
+  ],
+  "summary": {"passed": 5, "failed": 0, "total": 5, "pass_rate": 1.0},
+  "timing": {"executor_duration_seconds": 208.4, "total_duration_seconds": 208.4},
+  "claims": [
+    {"claim": "Quarter targets such as '40+ posts by non-Panaversity authors' and '5,000' newsletter subscribers", "type": "quality", "verified": false, "evidence": "Labelled 'directional', but these are absolute numbers set without a baseline, which the plan itself says will only be recorded in Week 0."},
+    {"claim": "'AWS's and Microsoft's combined $3.5B behind one job title'", "type": "factual", "verified": true, "evidence": "Consistent with the Preface figures ($1B AWS + $2.5B Microsoft) and flagged 'recheck sources'."},
+    {"claim": "Content facts come from System of Record generation 82, read 28 Oct 2026", "type": "process", "verified": false, "evidence": "No transcript available to confirm."}
+  ],
+  "eval_feedback": {
+    "suggestions": [
+      {"assertion": "Any Anthropic valuation, revenue or IPO figure in the plan is labelled with its source or date and, where applicable, as reported rather than announced; or the plan uses no such figures.", "reason": "Non-discriminating here: the baseline passes via the 'uses no such figures' clause while still scheduling an Anthropic-vs-India IT valuation chart with no stated basis. A check that any planned Anthropic comparison names the figure and its reported or announced status would catch this."},
+      {"assertion": "The plan includes a fact-check list or explicit verify flags for claims and figures before publishing.", "reason": "This passes on a promised Week 0 sheet plus two inline 'recheck' notes. Requiring a populated list that names the specific figures would separate it from the with-skill plan's 20-row table."},
+      {"reason": "No assertion checks whether targets are invented absolutes or baseline-relative. This baseline invents '5,000' subscribers and '40+' citations."}
+    ],
+    "overall": "A strong baseline. All five assertions pass, so this case does not currently discriminate between the runs."
+  }
+}

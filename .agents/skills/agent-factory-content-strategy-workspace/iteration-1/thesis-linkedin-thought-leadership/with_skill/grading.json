@@ -1,0 +1,42 @@
+{
+  "expectations": [
+    {
+      "text": "The plan covers a full quarter (about 12-13 weeks) with a stated posting cadence.",
+      "passed": true,
+      "evidence": "Header: 'Quarter: 13 weeks, Mon 2 Nov 2026 to Sun 31 Jan 2027'. Section 4: 'Cadence: 3 page posts a week (Tue, Wed, Thu ...), plus 1 newsletter edition every two weeks (6 editions this quarter) and 1 LinkedIn Live a month. Holiday weeks drop to 2 posts.' Week tables run W1 to W13."
+    },
+    {
+      "text": "The plan ties content pieces to at least four of these book pages by name or URL: Preface, AI Is Non-Negotiable, Thesis, The Operating Layer, What You Carry In.",
+      "passed": true,
+      "evidence": "All five are tied to pieces with URLs: #1 '/docs/preface-agent-native', #11 'Nine objections, answered' -> '/docs/why-ai-is-non-negotiable', #7 '/docs/thesis (10-80-10 section)', #4 '/docs/ai-operating-layer (§1, §4)', #13 '/docs/what-you-carry-in'."
+    },
+    {
+      "text": "The plan includes a fact-check list or explicit verify flags for claims and figures before publishing.",
+      "passed": true,
+      "evidence": "Section 6 'Fact-check list (before each piece is published)' is a 20-row table (claim, used in, what the book says, verify where, note). Also inline '[verify]' flags, e.g. '[verify] the book site's analytics will record UTM parameters', and the header 'Re-check every figure in section 6 before it is published.'"
+    },
+    {
+      "text": "Any Anthropic valuation, revenue or IPO figure in the plan is labelled with its source or date and, where applicable, as reported rather than announced; or the plan uses no such figures.",
+      "passed": true,
+      "evidence": "Every Anthropic figure checked: (1) '$965B post-money (Series H, 28 May 2026)' - dated, 'citing CNBC', note 'Likely outdated by publication. Re-check, keep the date on it'. (2) 'run-rate above $47B' - same row, 'citing CNBC', dated by the row; not separately marked 'reported', but source-attributed, which the assertion accepts. (3) '$800B bid (reported by Bloomberg, Apr 2026)' - labelled reported, with source and date. (4) '3.2x India's six largest IT services companies' - explicitly tied to the $800B reported bid with 'Trap: don't pair 3.2x with $965B'. No IPO figures appear. The section intro says the figures are 'dated, some are reported rather than announced'."
+    },
+    {
+      "text": "The distribution plan routes LinkedIn attention back to an owned surface such as the book site, Zia Tutor, a newsletter, or the community.",
+      "passed": true,
+      "evidence": "Section 5: 'Every flagship leads back to an owned surface: the book page (the canonical, fullest version of the argument) and the newsletter list. Each post's primary link uses UTMs: ?utm_source=linkedin&utm_medium=social&utm_campaign=q4-thesis...'. The distribution table has an 'Owned' column for each flagship (Preface page, Glossary page, Operating Layer page, etc.)."
+    }
+  ],
+  "summary": {"passed": 5, "failed": 0, "total": 5, "pass_rate": 1.0},
+  "timing": {"executor_duration_seconds": 208.5, "total_duration_seconds": 208.5},
+  "claims": [
+    {"claim": "Book facts were checked against the Agent Factory System of Record (corpus generation 82)", "type": "process", "verified": false, "evidence": "No transcript available to confirm the tool calls; plausible but unverifiable from the outputs alone."},
+    {"claim": "Digital FTE cost figures were not confirmed in this session's System of Record search", "type": "process", "verified": true, "evidence": "The plan flags this in the fact-check table and says to use the figures only if found on the live page."}
+  ],
+  "eval_feedback": {
+    "suggestions": [
+      {"assertion": "Any Anthropic valuation, revenue or IPO figure in the plan is labelled with its source or date and, where applicable, as reported rather than announced; or the plan uses no such figures.", "reason": "The 'or the plan uses no such figures' escape clause lets a plan pass while scheduling an Anthropic-vs-India chart with no stated valuation basis. Consider checking that any planned use of the 3.2x comparison is tied to the $800B reported bid, not $965B."},
+      {"assertion": "The plan ties content pieces to at least four of these book pages by name or URL: Preface, AI Is Non-Negotiable, Thesis, The Operating Layer, What You Carry In.", "reason": "Four of five is easy to hit because the prompt names the core ideas. Requiring all five, or AI Is Non-Negotiable specifically, would discriminate more."}
+    ],
+    "overall": "The plan passes cleanly. The assertions are mostly presence checks that a competent baseline also meets."
+  }
+}

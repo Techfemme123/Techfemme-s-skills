@@ -1,0 +1,24 @@
+{
+  "expectations": [
+    {"text": "The plan states that PCAO-F comes before PCAR-F and that passing both qualifies a candidate for the Panaversity FDE Internship Program.", "passed": true, "evidence": "Section 2 P5 clusters: 'the path (PCAO-F → PCAR-F → FDE Internship → optional CCAO-F/CCAR-F)'. Fact-check row 10: 'Passing PCAO-F and PCAR-F qualifies a candidate for the FDE Internship Program'."},
+    {"text": "The plan makes clear that the PCAO-F/PCAR-F gate is Panaversity's requirement and that the Anthropic exams are optional or not prerequisites.", "passed": true, "evidence": "Fact-check row 9: 'The PCAO-F → PCAR-F gate is **Panaversity's**, not Anthropic's; \"Anthropic does not require PCAO-F\" ... Never present the gate as Anthropic's rule'. Row 11: 'Anthropic exams are optional'. Piece #15 title: 'the optional Anthropic exams'."},
+    {"text": "The plan does not state a specific amount for the Panaversity proctoring fee or third-attempt fee (it says they are unannounced, marks them to verify, or omits them).", "passed": true, "evidence": "Blocker 2: 'that fee is \"not announced yet\" ... all content says \"fee to be announced\" and never quotes a number. [verify]'. Row 3: 'third attempt has a fee (TBA)'. The only dollar figure is Anthropic's CCAO-F $99, not a Panaversity fee."},
+    {"text": "The plan does not promise or guarantee jobs, salaries, income, or an internship place to people who sit the exam.", "passed": true, "evidence": "Row 10: '\"Qualifies for\", **not** a guaranteed place. Don't promise internships, jobs or income'. Outcome rule: 'no \"get a job\", \"guaranteed internship\" or \"earn X\"'. No content piece makes such a promise."},
+    {"text": "The plan uses the free sample exam as a call to action in at least one content piece.", "passed": true, "evidence": "Pieces #1, #2, #4, #5, #9, #10, #11, #12, #15 list 'Journey stage → **sit the free sample**'; Week 1 'CTA: **sit the free sample**'."},
+    {"text": "Every content piece listed in the plan is tagged with a language (English, Urdu, or Roman Urdu).", "passed": false, "evidence": "All 18 rows of the priority table have a Lang column, but the calendar lists extra pieces with no language: Week 1 'Instagram: ... Reel cut from #1 · story poll (\"Have you tried the sample?\")'; Week 3 'LinkedIn: ... a post sharing a Zia Tutor answer to a common PCAO-F question' and 'Instagram: ... domain-weight story series (one domain per day)'; Week 5 'LinkedIn: ... countdown post'; Week 6 'Clips from the #16 live (2–3 Shorts/Reels)' and 'LinkedIn: \"Booked your seat? Here's what to do the week before\"'. Several pieces are untagged, so the strict 'every piece' check fails."},
+    {"text": "At least five content pieces in the plan point to a specific agentfactory.panaversity.org/docs page URL.", "passed": true, "evidence": "Priority table column 'Book source (URL)' gives a specific docs path for all 18 pieces, e.g. #1 '/docs/certifications/pcao-f', #8 '/docs/how-to-learn-from-this-book (Layer 4); /docs/ecosystem/zia-tutor-ai', #11 '/docs/certifications (Six Mistakes Worth Avoiding)', #12 '/docs/ai-fluency-crash-course, /docs/workflow-design-diagnosis-crash-course, /docs/governance-risk-responsible-use-crash-course'. The paths are relative, but Section 2 gives the full domain (e.g. 'https://agentfactory.panaversity.org/docs/certifications/pcao-f')."}
+  ],
+  "summary": {"passed": 6, "failed": 1, "total": 7, "pass_rate": 0.86},
+  "timing": {"executor_duration_seconds": 163.8, "total_duration_seconds": 163.8},
+  "claims": [
+    {"claim": "Facts were checked against the Agent Factory System of Record (corpus generation 82)", "type": "process", "verified": false, "evidence": "No transcript available to verify the tool calls."},
+    {"claim": "Top three domains (21+16+15) total 52%", "type": "factual", "verified": true, "evidence": "21+16+15 = 52; the listed weights 14/21/12/16/12/15/10 sum to 100."}
+  ],
+  "eval_feedback": {
+    "suggestions": [
+      {"assertion": "Every content piece listed in the plan is tagged with a language (English, Urdu, or Roman Urdu).", "reason": "It's unclear whether calendar line items (story polls, re-cuts, clips) count as 'content pieces', and tags like 'Urdu/English mixed' or 'Urdu or English, depending on the learner' are borderline. Define the scope, e.g. every row in the main pieces table and calendar."},
+      {"assertion": "At least five content pieces in the plan point to a specific agentfactory.panaversity.org/docs page URL.", "reason": "It's unclear whether relative '/docs/...' paths count, and whether a blanket 'every link goes to the PCAO-F page' rule counts. Say that the URL must be attached to each piece, and whether it must be full or can be relative."}
+    ],
+    "overall": "A1, A3, A4 and A5 pass in both runs and don't discriminate on this prompt."
+  }
+}

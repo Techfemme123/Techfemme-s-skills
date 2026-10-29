@@ -1,0 +1,79 @@
+{
+  "expectations": [
+    {
+      "text": "The series plan contains exactly 12 posts (3 per week for 4 weeks).",
+      "passed": true,
+      "evidence": "'Cadence: 3 posts per week x 4 weeks = 12 posts'. Post 1 to Post 12 appear, three per week (Mon/Wed/Fri) across Weeks 1-4. The quick reference table has 12 rows."
+    },
+    {
+      "text": "Every one of the posts has a hook, a topic, and a CTA.",
+      "passed": true,
+      "evidence": "All 12 posts have Hook, Topic and CTA lines, e.g. Post 1 Hook 'Aap AI use nahi kar rahe...', Topic 'Sawal poochne aur kaam delegate karne mein farq...', CTA 'Comment mein apna ek kaam likho...'; Post 12 has 'CTA (do hisson mein)'."
+    },
+    {
+      "text": "The hooks are written in Roman Urdu (Urdu in Latin script), not in Urdu script and not in plain English.",
+      "passed": true,
+      "evidence": "All 12 hooks are Roman Urdu, e.g. Post 6 'Zyada tar log AI ko Google ki tarah use karte hain: chhota sa sawal, jaldi se jawab, aage.', Post 12 'Customer list, passwords, patient records... aap ne inmein se kuch AI mein paste kiya hai? Ruk jao.' No Urdu script or plain-English hooks."
+    },
+    {
+      "text": "Book and technical terms such as prompt, AI agent, Digital FTE, Claude or Zia Tutor are kept in English rather than translated into Urdu words.",
+      "passed": true,
+      "evidence": "'Technical terms English mein hi rahenge (prompt, token, context window, Skill, Connector)'. Used in English throughout: 'Zia Tutor se poochho', 'Skill = recipe card. Connector = kitchen.', 'rubric prompt', 'Hallucination', 'Sycophancy'. No translated equivalents."
+    },
+    {
+      "text": "Each post is mapped to a named crash course from the book's Foundations section (e.g. Just Delegate It, What AI Actually Is, AI Fluency, AI Prompting in 2026, Markdown In HTML Out, Code You Never Write, Skills & Connectors, How to Think in the AI Era, Workflow Design & Diagnosis, Governance Risk & Responsible Use), and no post cites a course that does not exist in the book.",
+      "passed": true,
+      "evidence": "Every post has a 'Course:' line naming a valid course: 1 Just Delegate It; 2-3 What AI Actually Is; 4 AI Fluency; 5-6 AI Prompting in 2026; 7 Markdown In, HTML Out; 8 Code You Never Write; 9 Skills & Connectors; 10 How to Think in the AI Era; 11 Workflow Design & Diagnosis; 12 Governance, Risk & Responsible Use. All 10 courses are covered and no invalid course is cited."
+    },
+    {
+      "text": "At least eight posts include a specific agentfactory.panaversity.org page URL.",
+      "passed": false,
+      "evidence": "0 posts have a URL. Posts give only slugs in backticks (e.g. '(`just-delegate-it-crash-course`)') and 'link bio mein'. The only agentfactory.panaversity.org URLs are in the document header (root and /docs/foundations), outside any post."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 1,
+    "total": 6,
+    "pass_rate": 0.83
+  },
+  "timing": {
+    "executor_duration_seconds": 180.4,
+    "total_duration_seconds": 180.4
+  },
+  "claims": [
+    {
+      "claim": "Panaversity students get two free PCAO-F attempts; PCAO-F is the first exam of the FDE path",
+      "type": "factual",
+      "verified": false,
+      "evidence": "Not verifiable from outputs. It goes into a CTA as fact, with only a soft 're-check' note in the production notes."
+    },
+    {
+      "claim": "Courses / Foundations track are 'free'",
+      "type": "factual",
+      "verified": false,
+      "evidence": "Repeated in CTAs (posts 1, 8, 12) and the caption template with no verification flag."
+    },
+    {
+      "claim": "Prompting course has '13 concepts'; rubric example scored an idea 8/100",
+      "type": "factual",
+      "verified": false,
+      "evidence": "Not checkable without the corpus. The plan does flag 8/100 for re-check."
+    }
+  ],
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "assertion": "Assertions 1-4",
+        "reason": "Both runs pass these, so they don't discriminate."
+      },
+      {
+        "reason": "No assertion penalises unflagged factual or cost claims in CTAs (e.g. 'do attempts free', 'course free hai'). This run asserts them directly, which is a real risk the eval misses."
+      },
+      {
+        "reason": "This run writes the whole plan in Roman Urdu. The other run writes only the hooks/CTAs in Roman Urdu and the rest in English. No assertion checks language beyond the hooks."
+      }
+    ],
+    "overall": "Only the URL assertion separates the runs on this side. Add a claims-safety assertion."
+  }
+}

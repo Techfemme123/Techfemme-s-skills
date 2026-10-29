@@ -1,0 +1,11 @@
+{
+  "eval_name": "thesis-linkedin-thought-leadership",
+  "prompt": "Zia sir wants the book's core argument (the right side of the line, Digital FTEs, the agent as the operating layer) to become something people actually cite and argue about on LinkedIn. Give me a quarter-long thought leadership content plan for the official Panaversity LinkedIn page, global English audience. Save it as linkedin-plan.md.",
+  "assertions": [
+    "The plan covers a full quarter (about 12-13 weeks) with a stated posting cadence.",
+    "The plan ties content pieces to at least four of these book pages by name or URL: Preface, AI Is Non-Negotiable, Thesis, The Operating Layer, What You Carry In.",
+    "The plan includes a fact-check list or explicit verify flags for claims and figures before publishing.",
+    "Any Anthropic valuation, revenue or IPO figure in the plan is labelled with its source or date and, where applicable, as reported rather than announced; or the plan uses no such figures.",
+    "The distribution plan routes LinkedIn attention back to an owned surface such as the book site, Zia Tutor, a newsletter, or the community."
+  ]
+}

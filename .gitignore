@@ -1,5 +1,6 @@
 # Test-run output from skill-creator; kept local
 .agents/skills/*-workspace/
+!.agents/skills/agent-factory-content-strategy-workspace/
 
 # Windows directory junctions into .agents/skills; recreate locally with
 #   New-Item -ItemType Junction -Path .claude\skills\<name> -Target .agents\skills\<name>

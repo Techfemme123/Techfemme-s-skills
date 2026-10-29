@@ -1,0 +1,12 @@
+{
+  "eval_name": "roman-urdu-foundations-series",
+  "prompt": "hamein Foundations wale crash courses ke liye ek Instagram + YouTube Shorts series plan karni hai, Pakistani beginners ke liye, Roman Urdu mein. 3 posts per week, 4 weeks. har post ka hook, topic aur CTA chahiye. save it as series-plan.md",
+  "assertions": [
+    "The series plan contains exactly 12 posts (3 per week for 4 weeks).",
+    "Every one of the posts has a hook, a topic, and a CTA.",
+    "The hooks are written in Roman Urdu (Urdu in Latin script), not in Urdu script and not in plain English.",
+    "Book and technical terms such as prompt, AI agent, Digital FTE, Claude or Zia Tutor are kept in English rather than translated into Urdu words.",
+    "Each post is mapped to a named crash course from the book's Foundations section (e.g. Just Delegate It, What AI Actually Is, AI Fluency, AI Prompting in 2026, Markdown In HTML Out, Code You Never Write, Skills & Connectors, How to Think in the AI Era, Workflow Design & Diagnosis, Governance Risk & Responsible Use), and no post cites a course that does not exist in the book.",
+    "At least eight posts include a specific agentfactory.panaversity.org page URL."
+  ]
+}

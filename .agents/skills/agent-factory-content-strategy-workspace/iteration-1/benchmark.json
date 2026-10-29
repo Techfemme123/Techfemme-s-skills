@@ -1,0 +1,361 @@
+{
+  "metadata": {
+    "skill_name": "agent-factory-content-strategy",
+    "skill_path": "",
+    "executor_model": "claude-opus-5-5",
+    "analyzer_model": "claude-opus-5-5",
+    "timestamp": "2026-10-28T18:37:56.889Z",
+    "evals_run": [
+      "pcao-f-certification-campaign",
+      "roman-urdu-foundations-series",
+      "thesis-linkedin-thought-leadership"
+    ],
+    "runs_per_configuration": 1
+  },
+  "runs": [
+    {
+      "eval_id": "pcao-f-certification-campaign",
+      "eval_name": "pcao-f-certification-campaign",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.8571,
+        "passed": 6,
+        "failed": 1,
+        "total": 7,
+        "time_seconds": 163.8,
+        "tokens": 94347,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "The plan states that PCAO-F comes before PCAR-F and that passing both qualifies a candidate for the Panaversity FDE Internship Program.",
+          "passed": true,
+          "evidence": "Section 2 P5 clusters: 'the path (PCAO-F → PCAR-F → FDE Internship → optional CCAO-F/CCAR-F)'. Fact-check row 10: 'Passing PCAO-F and PCAR-F qualifies a candidate for the FDE Internship Program'."
+        },
+        {
+          "text": "The plan makes clear that the PCAO-F/PCAR-F gate is Panaversity's requirement and that the Anthropic exams are optional or not prerequisites.",
+          "passed": true,
+          "evidence": "Fact-check row 9: 'The PCAO-F → PCAR-F gate is **Panaversity's**, not Anthropic's; \"Anthropic does not require PCAO-F\" ... Never present the gate as Anthropic's rule'. Row 11: 'Anthropic exams are optional'. Piece #15 title: 'the optional Anthropic exams'."
+        },
+        {
+          "text": "The plan does not state a specific amount for the Panaversity proctoring fee or third-attempt fee (it says they are unannounced, marks them to verify, or omits them).",
+          "passed": true,
+          "evidence": "Blocker 2: 'that fee is \"not announced yet\" ... all content says \"fee to be announced\" and never quotes a number. [verify]'. Row 3: 'third attempt has a fee (TBA)'. The only dollar figure is Anthropic's CCAO-F $99, not a Panaversity fee."
+        },
+        {
+          "text": "The plan does not promise or guarantee jobs, salaries, income, or an internship place to people who sit the exam.",
+          "passed": true,
+          "evidence": "Row 10: '\"Qualifies for\", **not** a guaranteed place. Don't promise internships, jobs or income'. Outcome rule: 'no \"get a job\", \"guaranteed internship\" or \"earn X\"'. No content piece makes such a promise."
+        },
+        {
+          "text": "The plan uses the free sample exam as a call to action in at least one content piece.",
+          "passed": true,
+          "evidence": "Pieces #1, #2, #4, #5, #9, #10, #11, #12, #15 list 'Journey stage → **sit the free sample**'; Week 1 'CTA: **sit the free sample**'."
+        },
+        {
+          "text": "Every content piece listed in the plan is tagged with a language (English, Urdu, or Roman Urdu).",
+          "passed": false,
+          "evidence": "All 18 rows of the priority table have a Lang column, but the calendar lists extra pieces with no language: Week 1 'Instagram: ... Reel cut from #1 · story poll (\"Have you tried the sample?\")'; Week 3 'LinkedIn: ... a post sharing a Zia Tutor answer to a common PCAO-F question' and 'Instagram: ... domain-weight story series (one domain per day)'; Week 5 'LinkedIn: ... countdown post'; Week 6 'Clips from the #16 live (2–3 Shorts/Reels)' and 'LinkedIn: \"Booked your seat? Here's what to do the week before\"'. Several pieces are untagged, so the strict 'every piece' check fails."
+        },
+        {
+          "text": "At least five content pieces in the plan point to a specific agentfactory.panaversity.org/docs page URL.",
+          "passed": true,
+          "evidence": "Priority table column 'Book source (URL)' gives a specific docs path for all 18 pieces, e.g. #1 '/docs/certifications/pcao-f', #8 '/docs/how-to-learn-from-this-book (Layer 4); /docs/ecosystem/zia-tutor-ai', #11 '/docs/certifications (Six Mistakes Worth Avoiding)', #12 '/docs/ai-fluency-crash-course, /docs/workflow-design-diagnosis-crash-course, /docs/governance-risk-responsible-use-crash-course'. The paths are relative, but Section 2 gives the full domain (e.g. 'https://agentfactory.panaversity.org/docs/certifications/pcao-f')."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": "pcao-f-certification-campaign",
+      "eval_name": "pcao-f-certification-campaign",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.7143,
+        "passed": 5,
+        "failed": 2,
+        "total": 7,
+        "time_seconds": 139.1,
+        "tokens": 81733,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "The plan states that PCAO-F comes before PCAR-F and that passing both qualifies a candidate for the Panaversity FDE Internship Program.",
+          "passed": true,
+          "evidence": "Section 2 facts: 'Path: **PCAO-F → PCAR-F → FDE Internship Program**'. Guardrail: 'Do not say PCAO-F alone qualifies someone for the internship. **Both PCAO-F and PCAR-F** are needed.'"
+        },
+        {
+          "text": "The plan makes clear that the PCAO-F/PCAR-F gate is Panaversity's requirement and that the Anthropic exams are optional or not prerequisites.",
+          "passed": false,
+          "evidence": "The first half is present: 'PCAO-F is Panaversity's readiness gate' and 'Do not imply Anthropic requires or endorses PCAO-F.' But the plan never says the Anthropic exams (CCAO-F/CCAR-F) are optional or not prerequisites for the gate or the internship. It calls CCAO-F 'the credential employers verify with Anthropic', W5-LI-1 says 'CCAO-F is the one worth carrying', and it offers Anthropic registration help 'for internship participants'. Whether the Anthropic exams are optional is never stated."
+        },
+        {
+          "text": "The plan does not state a specific amount for the Panaversity proctoring fee or third-attempt fee (it says they are unannounced, marks them to verify, or omits them).",
+          "passed": true,
+          "evidence": "Assumption 2: 'the external proctoring fee and the fee for a third or later attempt are \"not announced yet.\" Content must not give a price'. Guardrail: 'Do not quote fees for externals or for a third attempt.' The only $99 figure is Anthropic's CCAO-F."
+        },
+        {
+          "text": "The plan does not promise or guarantee jobs, salaries, income, or an internship place to people who sit the exam.",
+          "passed": true,
+          "evidence": "Guardrail: 'Do not promise jobs or salaries. The book itself says the credentials are new and have \"no mature salary data.\"' No content piece promises a job, income or an internship place."
+        },
+        {
+          "text": "The plan uses the free sample exam as a call to action in at least one content piece.",
+          "passed": true,
+          "evidence": "W3-YT-UR 'Ends with: try the free sample'; W3-IG-R 'Free sample exam: attempt kharch nahin hota'; W4 'Sample Exam Challenge ... Take the free sample this week'."
+        },
+        {
+          "text": "Every content piece listed in the plan is tagged with a language (English, Urdu, or Roman Urdu).",
+          "passed": true,
+          "evidence": "Every row of the Week 1–7 calendar tables has a Lang value (EN, Urdu, Roman Urdu, EN/UR, Urdu/EN, Bilingual, 'EN or UR (whichever did better)'). Week 0 items are setup and internal work (templates, glossary, scripts), not published pieces."
+        },
+        {
+          "text": "At least five content pieces in the plan point to a specific agentfactory.panaversity.org/docs page URL.",
+          "passed": false,
+          "evidence": "No calendar row cites a URL. The only URLs are in the Section 2 header ('Sources: ... https://agentfactory.panaversity.org/docs/certifications/pcao-f') and in Section 10 Sources. A blanket rule ('Every link goes to the PCAO-F page with UTM parameters') and vague references such as W3-LI-1 '(links to study guide pages)' don't tie specific pieces to specific docs URLs."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": "roman-urdu-foundations-series",
+      "eval_name": "roman-urdu-foundations-series",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.8333,
+        "passed": 5,
+        "failed": 1,
+        "total": 6,
+        "time_seconds": 200.5,
+        "tokens": 99138,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "The series plan contains exactly 12 posts (3 per week for 4 weeks).",
+          "passed": true,
+          "evidence": "Header: '3 posts/week · 4 weeks (12 posts)'. Section 4 has Post 1 to Post 12, three under each of Week 1-4 (Mon/Wed/Fri, 2 Nov to 27 Nov)."
+        },
+        {
+          "text": "Every one of the posts has a hook, a topic, and a CTA.",
+          "passed": true,
+          "evidence": "All 12 post blocks have Hook, Topic and CTA lines, e.g. Post 1 Hook 'Har koi kehta hai \"AI seekho\". Lekin kahan se shuru karein? Ye raha jawab.', Topic 'The Foundations path...', CTA 'Follow karein. Agla video Wednesday ko: course #1.'; Post 12 Hook '4 hafte, 10 courses, 1 line har course ki. Kitne yaad hain?', CTA 'Comment mein apna sab se bara AI sawal likhein...'."
+        },
+        {
+          "text": "The hooks are written in Roman Urdu (Urdu in Latin script), not in Urdu script and not in plain English.",
+          "passed": true,
+          "evidence": "All 12 hooks are Roman Urdu, e.g. Post 2 'Aap AI se sirf sawal poochte hain? Isi liye kaam ab bhi aap hi kar rahe hain.', Post 9 'Har baar AI ko wohi baat dobara samjhate hain? Ek baar sikhaein, bas.' No Urdu script, no all-English hook. (The topic/beats text around them is English, but this assertion covers only hooks.)"
+        },
+        {
+          "text": "Book and technical terms such as prompt, AI agent, Digital FTE, Claude or Zia Tutor are kept in English rather than translated into Urdu words.",
+          "passed": true,
+          "evidence": "Language rule: 'Book terms stay in English: prompt, token, context window, Skill, connector, Digital FTE, Markdown, HTML, workflow.' Hooks/CTAs keep them: 'Asal cheez prompt nahi, context hai', 'Aaj ka prompt Markdown mein likh kar dekhein', 'Zia Tutor AI'. No translated forms found."
+        },
+        {
+          "text": "Each post is mapped to a named crash course from the book's Foundations section (e.g. Just Delegate It, What AI Actually Is, AI Fluency, AI Prompting in 2026, Markdown In HTML Out, Code You Never Write, Skills & Connectors, How to Think in the AI Era, Workflow Design & Diagnosis, Governance Risk & Responsible Use), and no post cites a course that does not exist in the book.",
+          "passed": false,
+          "evidence": "Posts 2-11 map to valid courses (post 11 to both Workflow Design and Governance), and no nonexistent course is cited. But Post 1 is mapped to the 'Foundations hub' (table row '| 1 | Mon 2 Nov | Foundations hub |', 'Post 1: Series trailer') and Post 12 to 'Hub + Zia Tutor' (a recap pointing to General Agents), not to a named crash course. Under the strict 'each post' rule, this fails."
+        },
+        {
+          "text": "At least eight posts include a specific agentfactory.panaversity.org page URL.",
+          "passed": true,
+          "evidence": "All 12 posts have a full URL in their Source line, e.g. Post 2 'https://agentfactory.panaversity.org/docs/just-delegate-it-crash-course', Post 6 'https://agentfactory.panaversity.org/docs/ai-prompting-2026', Post 11 governance + workflow URLs, Post 12 foundations / ecosystem/zia-tutor-ai / general-agents. 12/12 >= 8."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": "roman-urdu-foundations-series",
+      "eval_name": "roman-urdu-foundations-series",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.8333,
+        "passed": 5,
+        "failed": 1,
+        "total": 6,
+        "time_seconds": 180.4,
+        "tokens": 88035,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "The series plan contains exactly 12 posts (3 per week for 4 weeks).",
+          "passed": true,
+          "evidence": "'Cadence: 3 posts per week x 4 weeks = 12 posts'. Post 1 to Post 12 appear, three per week (Mon/Wed/Fri) across Weeks 1-4. The quick reference table has 12 rows."
+        },
+        {
+          "text": "Every one of the posts has a hook, a topic, and a CTA.",
+          "passed": true,
+          "evidence": "All 12 posts have Hook, Topic and CTA lines, e.g. Post 1 Hook 'Aap AI use nahi kar rahe...', Topic 'Sawal poochne aur kaam delegate karne mein farq...', CTA 'Comment mein apna ek kaam likho...'; Post 12 has 'CTA (do hisson mein)'."
+        },
+        {
+          "text": "The hooks are written in Roman Urdu (Urdu in Latin script), not in Urdu script and not in plain English.",
+          "passed": true,
+          "evidence": "All 12 hooks are Roman Urdu, e.g. Post 6 'Zyada tar log AI ko Google ki tarah use karte hain: chhota sa sawal, jaldi se jawab, aage.', Post 12 'Customer list, passwords, patient records... aap ne inmein se kuch AI mein paste kiya hai? Ruk jao.' No Urdu script or plain-English hooks."
+        },
+        {
+          "text": "Book and technical terms such as prompt, AI agent, Digital FTE, Claude or Zia Tutor are kept in English rather than translated into Urdu words.",
+          "passed": true,
+          "evidence": "'Technical terms English mein hi rahenge (prompt, token, context window, Skill, Connector)'. Used in English throughout: 'Zia Tutor se poochho', 'Skill = recipe card. Connector = kitchen.', 'rubric prompt', 'Hallucination', 'Sycophancy'. No translated equivalents."
+        },
+        {
+          "text": "Each post is mapped to a named crash course from the book's Foundations section (e.g. Just Delegate It, What AI Actually Is, AI Fluency, AI Prompting in 2026, Markdown In HTML Out, Code You Never Write, Skills & Connectors, How to Think in the AI Era, Workflow Design & Diagnosis, Governance Risk & Responsible Use), and no post cites a course that does not exist in the book.",
+          "passed": true,
+          "evidence": "Every post has a 'Course:' line naming a valid course: 1 Just Delegate It; 2-3 What AI Actually Is; 4 AI Fluency; 5-6 AI Prompting in 2026; 7 Markdown In, HTML Out; 8 Code You Never Write; 9 Skills & Connectors; 10 How to Think in the AI Era; 11 Workflow Design & Diagnosis; 12 Governance, Risk & Responsible Use. All 10 courses are covered and no invalid course is cited."
+        },
+        {
+          "text": "At least eight posts include a specific agentfactory.panaversity.org page URL.",
+          "passed": false,
+          "evidence": "0 posts have a URL. Posts give only slugs in backticks (e.g. '(`just-delegate-it-crash-course`)') and 'link bio mein'. The only agentfactory.panaversity.org URLs are in the document header (root and /docs/foundations), outside any post."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": "thesis-linkedin-thought-leadership",
+      "eval_name": "thesis-linkedin-thought-leadership",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 208.5,
+        "tokens": 114819,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "The plan covers a full quarter (about 12-13 weeks) with a stated posting cadence.",
+          "passed": true,
+          "evidence": "Header: 'Quarter: 13 weeks, Mon 2 Nov 2026 to Sun 31 Jan 2027'. Section 4: 'Cadence: 3 page posts a week (Tue, Wed, Thu ...), plus 1 newsletter edition every two weeks (6 editions this quarter) and 1 LinkedIn Live a month. Holiday weeks drop to 2 posts.' Week tables run W1 to W13."
+        },
+        {
+          "text": "The plan ties content pieces to at least four of these book pages by name or URL: Preface, AI Is Non-Negotiable, Thesis, The Operating Layer, What You Carry In.",
+          "passed": true,
+          "evidence": "All five are tied to pieces with URLs: #1 '/docs/preface-agent-native', #11 'Nine objections, answered' -> '/docs/why-ai-is-non-negotiable', #7 '/docs/thesis (10-80-10 section)', #4 '/docs/ai-operating-layer (§1, §4)', #13 '/docs/what-you-carry-in'."
+        },
+        {
+          "text": "The plan includes a fact-check list or explicit verify flags for claims and figures before publishing.",
+          "passed": true,
+          "evidence": "Section 6 'Fact-check list (before each piece is published)' is a 20-row table (claim, used in, what the book says, verify where, note). Also inline '[verify]' flags, e.g. '[verify] the book site's analytics will record UTM parameters', and the header 'Re-check every figure in section 6 before it is published.'"
+        },
+        {
+          "text": "Any Anthropic valuation, revenue or IPO figure in the plan is labelled with its source or date and, where applicable, as reported rather than announced; or the plan uses no such figures.",
+          "passed": true,
+          "evidence": "Every Anthropic figure checked: (1) '$965B post-money (Series H, 28 May 2026)' - dated, 'citing CNBC', note 'Likely outdated by publication. Re-check, keep the date on it'. (2) 'run-rate above $47B' - same row, 'citing CNBC', dated by the row; not separately marked 'reported', but source-attributed, which the assertion accepts. (3) '$800B bid (reported by Bloomberg, Apr 2026)' - labelled reported, with source and date. (4) '3.2x India's six largest IT services companies' - explicitly tied to the $800B reported bid with 'Trap: don't pair 3.2x with $965B'. No IPO figures appear. The section intro says the figures are 'dated, some are reported rather than announced'."
+        },
+        {
+          "text": "The distribution plan routes LinkedIn attention back to an owned surface such as the book site, Zia Tutor, a newsletter, or the community.",
+          "passed": true,
+          "evidence": "Section 5: 'Every flagship leads back to an owned surface: the book page (the canonical, fullest version of the argument) and the newsletter list. Each post's primary link uses UTMs: ?utm_source=linkedin&utm_medium=social&utm_campaign=q4-thesis...'. The distribution table has an 'Owned' column for each flagship (Preface page, Glossary page, Operating Layer page, etc.)."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": "thesis-linkedin-thought-leadership",
+      "eval_name": "thesis-linkedin-thought-leadership",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 208.4,
+        "tokens": 85849,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "The plan covers a full quarter (about 12-13 weeks) with a stated posting cadence.",
+          "passed": true,
+          "evidence": "Header: 'Quarter: 13 weeks, Mon 9 Nov 2026 to Fri 5 Feb 2027'. Section 5: 'Company page: 4 posts a week, plus 1 newsletter every two weeks', with a Mon/Tue/Thu/Fri slot table. Section 7 has a 13-week calendar plus Week 0 setup."
+        },
+        {
+          "text": "The plan ties content pieces to at least four of these book pages by name or URL: Preface, AI Is Non-Negotiable, Thesis, The Operating Layer, What You Carry In.",
+          "passed": true,
+          "evidence": "Four pages, with URLs, are tied to pieces: Preface (Week 1 manifesto, 'agentfactory.panaversity.org/docs/preface-agent-native'), Thesis (Claim #12, Week 3), The Operating Layer (Week 4 'Operating Layer launch post'; Claims #02, #04-#07, #10), What You Carry In (Week 10 'What You Carry In launch', Claim #08). AI Is Non-Negotiable is not mentioned anywhere."
+        },
+        {
+          "text": "The plan includes a fact-check list or explicit verify flags for claims and figures before publishing.",
+          "passed": true,
+          "evidence": "Week 0: 'Fact-check sheet: every number to be used, its source URL, and the date it was checked.' Inline flags on figures: Week 7 'OSWorld point from §8 (recheck the current figure before posting)'; Week 11 '$3.5B behind one job title (recheck sources)'. Guardrail 1: 'Recheck before each post.' Weaker than a populated list (the sheet is a Week 0 task, not delivered), but explicit verify flags on figures are present."
+        },
+        {
+          "text": "Any Anthropic valuation, revenue or IPO figure in the plan is labelled with its source or date and, where applicable, as reported rather than announced; or the plan uses no such figures.",
+          "passed": true,
+          "evidence": "No Anthropic dollar valuation, revenue or IPO figure appears in the plan. Anthropic appears only in 'Chart: Anthropic vs. India's six largest IT firms (Preface). Frame with care; see §10' (Week 11), 'The Anthropic vs. India IT comparison' and '1.9 million jobs' (Guardrail 3), and as a named vendor. Guardrail 1 also says that for 'valuations, run-rates' the team must say they are reported and 'Never round up or remove \"reported\" or \"projected.\"' This passes via the no-figures clause. Note that the Week 11 chart will need a valuation, and the plan does not say which basis (the $800B reported bid or a later figure) to use."
+        },
+        {
+          "text": "The distribution plan routes LinkedIn attention back to an owned surface such as the book site, Zia Tutor, a newsletter, or the community.",
+          "passed": true,
+          "evidence": "Section 5 rules: 'Link to the exact book page, not the homepage, in the first comment or at the end, with UTM tags.' Metrics table: 'Click-throughs to the book | UTM-tagged links (utm_source=linkedin&utm_campaign=right-side-q4)'. Section 9: 'Newsletter. Each issue ends with \"Argue with this issue\" and links to the exact book section.'"
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 0.8968,
+        "stddev": 0.0902,
+        "min": 0.8333,
+        "max": 1
+      },
+      "time_seconds": {
+        "mean": 190.9333,
+        "stddev": 23.8362,
+        "min": 163.8,
+        "max": 208.5
+      },
+      "tokens": {
+        "mean": 102768,
+        "stddev": 10707.8649,
+        "min": 94347,
+        "max": 114819
+      }
+    },
+    "without_skill": {
+      "pass_rate": {
+        "mean": 0.8492,
+        "stddev": 0.1435,
+        "min": 0.7143,
+        "max": 1
+      },
+      "time_seconds": {
+        "mean": 175.9667,
+        "stddev": 34.8621,
+        "min": 139.1,
+        "max": 208.4
+      },
+      "tokens": {
+        "mean": 85205.6667,
+        "stddev": 3199.8765,
+        "min": 81733,
+        "max": 88035
+      }
+    },
+    "delta": {
+      "pass_rate": "+0.05",
+      "time_seconds": "+15.0",
+      "tokens": "+17562"
+    }
+  },
+  "notes": [
+    "One run per configuration, so there is no variance estimate; treat the deltas as directional.",
+    "Baselines were strong: every baseline used the Agent Factory System of Record connector on its own, so the skill is being compared against an informed starting point.",
+    "Non-discriminating (pass in both configs): PCAO-F path statement, no invented fees, no outcome guarantees, free-sample CTA; Roman Urdu post count, hook/topic/CTA, Roman Urdu hooks, English terms; and all 5 LinkedIn assertions. These still guard against harmful output but need tightening to measure the skill.",
+    "Where the skill helped: linking each piece to a specific book URL (baseline failed this in 2 of 3 cases: 0/12 Shorts posts had a URL; PCAO-F calendar rows had none), and stating that Anthropic exams are optional (baseline failed).",
+    "Where the skill hurt: in the Roman Urdu series it added a trailer and recap and merged two courses, so 3 posts were not mapped to a single Foundations course; the baseline gave each of the 10 courses its own post. In PCAO-F, its weekly calendar added derivative items (clips, story polls) without language tags.",
+    "Grader saw qualitative wins not covered by any assertion: the with-skill plans flagged unverified claims (e.g. 'free', Zia Tutor price) where the baseline stated them as fact, gave a full fact-check list, and set targets relative to a baseline instead of invented absolute numbers.",
+    "Cost: the skill adds about 21% tokens (+17.6k mean) and about 15s per run."
+  ]
+}
