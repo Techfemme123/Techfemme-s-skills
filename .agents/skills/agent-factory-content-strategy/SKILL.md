@@ -25,6 +25,8 @@ Every content plan names book concepts, pages, courses and certification rules. 
 
 If you can't verify something, mark it **[verify]** in the plan instead of guessing. Never invent a chapter, course, statistic, price, date or quote.
 
+**Always give full URLs, even when you can't verify live.** If the System of Record tools and the live site are both unavailable, take page paths from `references/book-map.md`, write them out in full (`https://agentfactory.panaversity.org` + path), and add **[verify]** once in the fact-check list. A plan with no links is not usable, and an unchecked link from the map is better than none. Use the exact course names from the map (for Foundations: Just Delegate It, What AI Actually Is, AI Fluency, AI Prompting in 2026, and so on) and never rename or add a course.
+
 Grounding has a second payoff. Every content piece gets a **source page** in the book. That page is where the piece's call to action points and what it links to, and it keeps the content and the book saying the same thing.
 
 ---
@@ -126,7 +128,7 @@ Starting rules (details and examples are in `references/bilingual.md`):
 - **Keep the book's terms in English** in every language: Digital FTE, Agent Factory, MCP, prompt, Claude Code, the certification codes. Learners will meet them that way in the book, the exams and the job market.
 - **Code-switching is natural.** Urdu or Roman Urdu sentences carrying English technical nouns are what the audience speaks. Don't force pure Urdu technical vocabulary.
 
-In every plan, tag each piece with its language. Where a piece will exist in more than one language, say whether the other version is a **translation**, an **adaptation** (same idea, local examples), or a **separate piece**.
+In every plan, tag each piece with its language (English, Urdu or Roman Urdu), **everywhere the piece appears**: the priority table, each calendar row, and each atomised clip, carousel or caption in the distribution section. A piece named in the calendar without a tag is a miss. Where a piece will exist in more than one language, say whether the other version is a **translation**, an **adaptation** (same idea, local examples), or a **separate piece**.
 
 ---
 
